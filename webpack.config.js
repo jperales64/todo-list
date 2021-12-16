@@ -3,7 +3,7 @@ const path = require('path');
 
 module.exports = {
     mode: 'development',
-    entry: './src/index.js',
+    entry: './src/todoController.js',
     devtool: 'inline-source-map',
     output: {
         filename: 'main.js',
