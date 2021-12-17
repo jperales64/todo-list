@@ -18,6 +18,22 @@ const todoView = (() => {
             listItemTitle.textContent = listItem.getTitle();
             listItemDiv.appendChild(listItemTitle);
             listDiv.appendChild(listItemDiv);
+            listItemDiv.classList.add('list-item-div');
+
+            listItemDiv.addEventListener('mouseenter', function() {
+                this.classList.remove('list-item-div');
+                this.classList.add('hover');
+            })
+            listItemDiv.addEventListener('mouseleave', function() {
+                this.classList.add('list-item-div');
+                this.classList.remove('hover');
+            })
+
+            listItemDiv.addEventListener('click', function() {
+
+                this.classList.toggle('list-item-selected');
+            })
+
         }
     }
 
