@@ -1,16 +1,33 @@
+import { add } from "date-fns";
+
 const todoView = (() => {
     const container = document.querySelector(".content");
 
+    //creates popup
+    const popUpForm = document.createElement("div");
+    popUpForm.classList.add("pop-up-form", "disabled");
+    const taskTitile = document.createElement("input");
+    taskTitile.setAttribute("type", "text");
+    taskTitile.classList.add("task-title");
+    taskTitile.addEventListener('click', () => {
+        taskTitile.select();
+    });
+    taskTitile.defaultValue = "Task Title";
+    popUpForm.appendChild(taskTitile);
+    const addTaskToListButton = document.createElement("button");
+    addTaskToListButton.textContent = "Add Task";
+    addTaskToListButton.classList.add("add-task-to-list-button");
+    popUpForm.appendChild(addTaskToListButton);
+
+    //creates toolbar
     const toolBar = document.createElement("div");
     toolBar.classList.add("tool-bar");
 
     const addButton = document.createElement("button");
     addButton.classList.add("add-button");
     addButton.textContent = "Create a Task";
-    toolBar.appendChild(addButton);
 
-    const toolBar1 = document.createElement("div");
-    toolBar1.classList.add("tool-bar");
+    toolBar.appendChild(addButton);
 
     const mainDiv = document.createElement("div");
     mainDiv.classList.add("main-div");
@@ -21,8 +38,12 @@ const todoView = (() => {
     mainDiv.appendChild(listDiv);
     container.appendChild(toolBar);
     container.appendChild(mainDiv);
+    container.appendChild(popUpForm);
 
     const displayTodoList = (todoList) => {
+        while (listDiv.firstChild) {
+            listDiv.removeChild(listDiv.firstChild);
+        }
         for (let listItem of todoList) {
             const listItemDiv = document.createElement("div");
             const listItemTitle = document.createElement("h3");
@@ -47,7 +68,13 @@ const todoView = (() => {
         }
     };
 
-    return { displayTodoList };
+    const displayPopUp = () => {
+        container.classList.toggle("dimmer");
+        popUpForm.classList.toggle("disabled");
+    };
+
+
+    return { displayTodoList, displayPopUp };
 })();
 
 export default todoView;

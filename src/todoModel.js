@@ -12,7 +12,8 @@ const todoModel = (() => {
 
     const addTodoListItem = (title, description, dueDate, priority) => {
         todoList.push(todoListItemFactory(title, description, dueDate, priority));
-    }
+
+    };
 
     const getTodoList = () => {
         return todoList;
