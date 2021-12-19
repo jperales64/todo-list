@@ -1,5 +1,10 @@
     body {
         margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
     }
     
     .content {
@@ -47,12 +52,15 @@
     
     .list-item-selected {
         border-style: solid;
-        border-width: 1px;
-        border-color: black;
+        border-width: 3px;
+        border-color: rebeccapurple;
     }
     
-    .add-button {
+    .add-button,
+    .add-task-to-list-button {
         margin-top: 30px;
+        border-radius: 30px;
+        padding: 5px 40px 5px 40px;
     }
     
     .tool-bar {
@@ -60,13 +68,12 @@
         flex-direction: column;
         align-items: center;
         flex-grow: 1;
+        background-color: rebeccapurple;
     }
     
     .pop-up-form {
         position: fixed;
-        z-index: 200;
-        justify-self: center;
-        align-self: center;
+        z-index: 1;
         background-color: white;
         width: 30%;
         height: 30%;
@@ -76,6 +83,16 @@
     
     .task-title {
         margin: 5px;
+        height: 40px;
+        font-size: 40px;
+        border-radius: 10px;
+        background-color: lightgray;
+        border: 0px none;
+    }
+    
+    .task-title:focus {
+        outline: none !important;
+        border: 1px solid rebeccapurple;
     }
     
     .dimmer {
@@ -95,4 +112,10 @@
     
     .add-task-to-list-button {
         margin: auto 5px 5px 5px;
+    }
+    
+    .add-task-to-list-button:hover,
+    .add-button:hover {
+        background-color: rebeccapurple;
+        color: white;
     }

@@ -12,7 +12,7 @@ const todoView = (() => {
     taskTitile.addEventListener('click', () => {
         taskTitile.select();
     });
-    taskTitile.defaultValue = "Task Title";
+    taskTitile.placeholder = "Task Title";
     popUpForm.appendChild(taskTitile);
     const addTaskToListButton = document.createElement("button");
     addTaskToListButton.textContent = "Add Task";
@@ -38,7 +38,7 @@ const todoView = (() => {
     mainDiv.appendChild(listDiv);
     container.appendChild(toolBar);
     container.appendChild(mainDiv);
-    container.appendChild(popUpForm);
+    document.body.append(popUpForm);
 
     const displayTodoList = (todoList) => {
         while (listDiv.firstChild) {
@@ -71,6 +71,7 @@ const todoView = (() => {
     const displayPopUp = () => {
         container.classList.toggle("dimmer");
         popUpForm.classList.toggle("disabled");
+        taskTitile.focus();
     };
 
 
