@@ -19,7 +19,11 @@ const todoModel = (() => {
         return todoList;
     }
 
-    return { addTodoListItem, getTodoList };
+    const getTodoItem = (index) => {
+        return todoList[index];
+    }
+
+    return { addTodoListItem, getTodoList, getTodoItem };
 })();
 
 
