@@ -1,0 +1,63 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.content {
+    height: 100vh;
+    background: linear-gradient(135deg, #003399, #24cea6);
+}
+
+.main-div,
+.toolbar,
+.list-view {
+    height: 100%;
+    display: flex;
+}
+
+.main-div {
+    width: 100%;
+}
+
+.toolbar {
+    background-color: lightgray;
+    width: 300px;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.list-view {
+    align-items: center;
+    flex-grow: 1;
+    background: linear-gradient(135deg, #003399, #24cea6);
+}
+
+.list-div {
+    margin: 10px;
+    padding: 10px;
+    padding-right: 20px;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow-y: auto;
+    overflow-x: hidden;
+    align-items: center;
+}
+
+.item-div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: lightgray;
+    margin: 10px;
+    padding: 10px;
+}
+
+.item-div-top-row {
+    display: flex;
+}
+
+.delete-button {
+    margin-left: auto;
+}
