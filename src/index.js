@@ -1,6 +1,11 @@
 import todoItemFactory from "./todoItem";
 import displayList from "./listDisplayer";
+import displayWebPage from "./webPage";
+import addListenerToDeleteButtons from "./deleteListItem";
+import addListnerToAddButton from "./addTaskToListButton";
+import './style.css';
 
+displayWebPage();
 
 //testItems
 const testItem = todoItemFactory("Eat Pizza", "Insert Pizza into mouth", "tomorrow", "High");
@@ -21,3 +26,7 @@ mainList.push(testItem3);
 mainList.push(testItem4);
 
 displayList(mainList);
+
+addListenerToDeleteButtons(mainList);
+
+addListnerToAddButton(mainList);
