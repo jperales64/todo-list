@@ -29,6 +29,7 @@ const addListnerToPopUpAddButton = (currentList) => {
                 taskPriority = document.querySelector('.task-priority').value;
             }
 
+
             currentList.push(todoItemFactory(taskTitle, taskDescription, taskDate, taskPriority));
             document.querySelector('.task-title').value = document.querySelector('.task-title').defaultValue;
             document.querySelector('.task-description').value = document.querySelector('.task-description').defaultValue;
