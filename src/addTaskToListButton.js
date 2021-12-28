@@ -1,20 +1,14 @@
-import todoItemFactory from "./todoItem";
-import displayList from "./listDisplayer";
-import clearListDiv from "./clearListDiv";
-import addListenerToDeleteButtons from "./deleteListItem";
-
-
-
-const addListnerToAddButton = (currentList) => {
+const addListnerToAddButton = () => {
     const addButton = document.querySelector('.add-button');
+    const popUpForm = document.querySelector('.wrapper');
 
     addButton.addEventListener('click', () => {
-        clearListDiv();
-        currentList.push(todoItemFactory("Sweep kitchen", "With a BROOM", "tomorrow", "High"));
-        displayList(currentList);
-        addListenerToDeleteButtons(currentList);
+
+        popUpForm.classList.toggle('disabled');
+        popUpForm.classList.toggle('dimmer');
 
     })
-}
+};
+
 
 export default addListnerToAddButton;

@@ -1,3 +1,5 @@
+import { format, parseISO } from 'date-fns'
+
 //displays list
 const displayList = (list) => {
     const content = document.querySelector(".list-view");
@@ -79,7 +81,9 @@ const createItemTitle = (listItem) => {
 //creates description for todo item
 const createItemDescription = (listItem) => {
     const itemDescription = document.createElement("p");
-    itemDescription.textContent = listItem.description;
+    let date = parseISO(listItem.dueDate);
+    date = format(date, "MM/dd");
+    itemDescription.textContent = date;
     itemDescription.classList.add("item-description");
 
     return itemDescription;

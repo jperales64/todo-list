@@ -1,7 +1,7 @@
 const displayWebPage = () => {
 
     const content = document.querySelector('.content');
-    content.appendChild(createHeader());
+    content.append(createHeader());
 
     const mainDiv = document.createElement('div');
     mainDiv.classList.add('main-div');
