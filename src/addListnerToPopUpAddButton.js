@@ -2,48 +2,56 @@ import todoItemFactory from "./todoItem";
 import displayList from "./listDisplayer";
 import clearListDiv from "./clearListDiv";
 import addListenerToDeleteButtons from "./deleteListItem";
-import { format } from 'date-fns'
-
-
+import { format } from "date-fns";
 
 const addListnerToPopUpAddButton = (currentList) => {
 
-    const addTaskToListButton = document.querySelector('.add-task-to-list-button');
-    const popUpForm = document.querySelector('.wrapper');
-    let taskTitle, taskDescription, taskPriority = '';
-    let taskDate = format(new Date(), 'yyyy-MM-dd');
+    const addTaskToListButton = document.querySelector(
+        ".add-task-to-list-button"
+    );
 
-    addTaskToListButton.addEventListener('click', () => {
+    const popUpForm = document.querySelector(".wrapper");
+    let taskTitle,
+        taskDescription,
+        taskPriority = "";
 
-        if (document.querySelector('.task-title').value != '') {
-            taskTitle = document.querySelector('.task-title').value;
+    let taskDate = format(new Date(), "yyyy-MM-dd");
 
-            if (document.querySelector('.task-description').value != '') {
-                taskDescription = document.querySelector('.task-description').value;
+    addTaskToListButton.addEventListener("click", () => {
+
+        if (document.querySelector(".task-title").value != "") {
+            taskTitle = document.querySelector(".task-title").value;
+
+            if (document.querySelector(".task-description").value != "") {
+                taskDescription = document.querySelector(".task-description").value;
             }
 
+            taskDate = document.querySelector(".task-date").value;
 
-            taskDate = document.querySelector('.task-date').value;
-
-            if (document.querySelector('.task-priority').value != '') {
-                taskPriority = document.querySelector('.task-priority').value;
+            if (document.querySelector(".task-priority").value != "") {
+                taskPriority = document.querySelector(".task-priority").value;
             }
 
+            currentList.push(
+                todoItemFactory(taskTitle, taskDescription, taskDate, taskPriority)
+            );
 
-            currentList.push(todoItemFactory(taskTitle, taskDescription, taskDate, taskPriority));
-            document.querySelector('.task-title').value = document.querySelector('.task-title').defaultValue;
-            document.querySelector('.task-description').value = document.querySelector('.task-description').defaultValue;
-            document.querySelector('.task-date').value = document.querySelector('.task-date').defaultValue;
-            document.querySelector('.task-priority').value = document.querySelector('.task-priority').defaultValue;
+            document.querySelector(".task-title").value =
+                document.querySelector(".task-title").defaultValue;
+            document.querySelector(".task-description").value =
+                document.querySelector(".task-description").defaultValue;
+            document.querySelector(".task-date").value =
+                document.querySelector(".task-date").defaultValue;
+            document.querySelector(".task-priority").value =
+                document.querySelector(".task-priority").defaultValue;
 
             clearListDiv();
             displayList(currentList);
             addListenerToDeleteButtons(currentList);
-            popUpForm.classList.toggle('disabled');
-            popUpForm.classList.toggle('dimmer');
-
+            popUpForm.classList.toggle("disabled");
+            popUpForm.classList.toggle("dimmer");
         }
     });
-}
+};
 
 export default addListnerToPopUpAddButton;
