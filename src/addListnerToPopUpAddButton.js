@@ -17,7 +17,7 @@ const addListnerToPopUpAddButton = (currentList) => {
 
     let taskDate = format(new Date(), "yyyy-MM-dd");
 
-    addTaskToListButton.addEventListener("click", () => {
+    addTaskToListButton.onclick = () => {
 
         if (document.querySelector(".task-title").value != "") {
             taskTitle = document.querySelector(".task-title").value;
@@ -26,7 +26,8 @@ const addListnerToPopUpAddButton = (currentList) => {
                 taskDescription = document.querySelector(".task-description").value;
             }
 
-            taskDate = document.querySelector(".task-date").value;
+            if (document.querySelector(".task-date").value != '')
+                taskDate = document.querySelector(".task-date").value;
 
             if (document.querySelector(".task-priority").value != "") {
                 taskPriority = document.querySelector(".task-priority").value;
@@ -51,7 +52,7 @@ const addListnerToPopUpAddButton = (currentList) => {
             popUpForm.classList.toggle("disabled");
             popUpForm.classList.toggle("dimmer");
         }
-    });
+    };
 };
 
 export default addListnerToPopUpAddButton;

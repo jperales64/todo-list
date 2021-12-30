@@ -108,3 +108,16 @@ body {
 .checkbox {
     margin-right: 1em;
 }
+
+.list-label {}
+
+.active,
+.list-label:hover {
+    color: rebeccapurple;
+}
+
+.list-array-div {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
