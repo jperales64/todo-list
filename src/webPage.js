@@ -31,7 +31,7 @@ const displayWebPage = () => {
     listArrayDiv.classList.add('list-array-div');
 
     listLabelIcon.addEventListener("click", function() {
-        listLabelIcon.classList.toggle("active");
+        listLabelIcon.classList.toggle("list-label-icon-rotate");
         const content = document.querySelector('.list-array-div');
         if (content.style.maxHeight) {
             content.style.maxHeight = null;

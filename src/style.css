@@ -3,7 +3,11 @@
     margin: 0;
 }
 
-header {
+body {
+    overflow: hidden;
+}
+
+Z header {
     background-color: #398ee7;
 }
 
@@ -22,8 +26,10 @@ header {
 }
 
 .add-button {
-    border-radius: 500px;
+    border-radius: 50px;
     border-style: solid;
+    border-color: #398ee7;
+    border-width: 1px;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -56,6 +62,35 @@ header {
     background-color: rgba(0, 0, 0, 0);
     border-radius: 50%;
     padding: 5px;
+    transition: .6s;
+}
+
+.list-array-div {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .4s linear;
+}
+
+.list-array-item {
+    padding: 1em;
+    margin: 1em;
+    background-color: white;
+    border: 1px solid #398ee7;
+    border-radius: 50px;
+}
+
+.list-array-item:hover {
+    background-color: #398ee7;
+    color: white;
+}
+
+.list-array-item:active {
+    background-color: #0071c6;
+    transform: scale(0.98);
+}
+
+.list-label-icon-rotate {
+    transform: rotate(180deg);
 }
 
 .list-label-icon:hover {
@@ -63,22 +98,17 @@ header {
     color: white;
 }
 
-body {
-    overflow: hidden;
+.list-label-icon:active {
+    color: #0071c6;
+    transform: scale(0.98);
 }
 
-.content {
+.lis .content {
     height: 100vh;
 }
 
 .main-div {
     width: 100%;
-}
-
-.toolbar {
-    width: 300px;
-    flex-direction: column;
-    padding: 10px;
 }
 
 .list-view {
@@ -167,15 +197,4 @@ body {
 
 .checkbox {
     margin-right: 1em;
-}
-
-.list-label {}
-
-.active,
-.list-label:hover {}
-
-.list-array-div {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
 }
