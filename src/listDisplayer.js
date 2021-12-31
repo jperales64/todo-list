@@ -93,7 +93,11 @@ const createItemDescription = (listItem) => {
 const createDeleteButton = () => {
     const deleteButton = document.createElement("button");
     deleteButton.classList.add("delete-button");
-    deleteButton.textContent = "Delete";
+    // deleteButton.textContent = "Delete";
+    deleteButton.classList.add('fas');
+    deleteButton.classList.add('fa-trash-alt');
+    deleteButton.classList.add('fa-lg');
+
 
     return deleteButton;
 };

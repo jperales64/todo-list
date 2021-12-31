@@ -1,7 +1,7 @@
 const displayWebPage = () => {
 
     const content = document.querySelector('.content');
-    content.append(createHeader());
+    //content.append(createHeader());
 
     const mainDiv = document.createElement('div');
     mainDiv.classList.add('main-div');
@@ -10,32 +10,35 @@ const displayWebPage = () => {
     toolbar.classList.add('toolbar');
 
     const addButton = document.createElement('button');
-    addButton.textContent = "Add Task";
+    addButton.textContent = "Create a new task";
     addButton.classList.add('add-button');
+    addButton.classList.add('fas');
+    addButton.classList.add('fa-plus');
 
     const listArrayDivContainer = document.createElement('div');
     listArrayDivContainer.classList.add('list-array-div-container');
 
     const listLabel = document.createElement('div');
+    const listLabelIcon = document.createElement('div');
     listLabel.textContent = 'Lists';
     listLabel.classList.add('list-label');
+    listLabelIcon.classList.add('fas');
+    listLabelIcon.classList.add('fa-chevron-down');
+    listLabelIcon.classList.add('list-label-icon');
+    listLabel.appendChild(listLabelIcon);
 
+    const listArrayDiv = document.createElement('div');
+    listArrayDiv.classList.add('list-array-div');
 
-
-    listLabel.addEventListener("click", function() {
-        this.classList.toggle("active");
-        var content = this.nextElementSibling;
+    listLabelIcon.addEventListener("click", function() {
+        listLabelIcon.classList.toggle("active");
+        const content = document.querySelector('.list-array-div');
         if (content.style.maxHeight) {
             content.style.maxHeight = null;
         } else {
             content.style.maxHeight = content.scrollHeight + "px";
         }
     });
-
-
-
-    const listArrayDiv = document.createElement('div');
-    listArrayDiv.classList.add('list-array-div');
 
     listArrayDivContainer.appendChild(listLabel);
     listArrayDivContainer.appendChild(listArrayDiv);
