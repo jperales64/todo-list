@@ -24,11 +24,11 @@ let taskDate = format(new Date(), "yyyy-MM-dd");
 let listArray = [];
 
 //testItems
-const testItem = todoItemFactory("Eat Pizza", "Insert Pizza into mouth", taskDate, "High");
-const testItem1 = todoItemFactory("Wash dishes", "With soap AND water", taskDate, "High");
-const testItem2 = todoItemFactory("Put away dishes", "STACK dishes in cabinet", taskDate, "High");
-const testItem3 = todoItemFactory("Clean Oven", "With water AND soap", taskDate, "High");
-const testItem4 = todoItemFactory("Sweep kitchen", "With a BROOM", taskDate, "High");
+// const testItem = todoItemFactory("Eat Pizza", "Insert Pizza into mouth", taskDate, "High");
+// const testItem1 = todoItemFactory("Wash dishes", "With soap AND water", taskDate, "High");
+// const testItem2 = todoItemFactory("Put away dishes", "STACK dishes in cabinet", taskDate, "High");
+// const testItem3 = todoItemFactory("Clean Oven", "With water AND soap", taskDate, "High");
+// const testItem4 = todoItemFactory("Sweep kitchen", "With a BROOM", taskDate, "High");
 
 const createNewTodoList = (name) => {
     let newArray = [];
@@ -40,11 +40,11 @@ const createNewTodoList = (name) => {
 
 const mainListIndex = createNewTodoList("Main List");
 let currentList = listArray[mainListIndex];
-currentList.push(testItem);
-currentList.push(testItem1);
-currentList.push(testItem2);
-currentList.push(testItem3);
-currentList.push(testItem4);
+// currentList.push(testItem);
+// currentList.push(testItem1);
+// currentList.push(testItem2);
+// currentList.push(testItem3);
+// currentList.push(testItem4);
 
 
 

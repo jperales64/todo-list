@@ -181,8 +181,26 @@ body {
     display: flex;
     flex-direction: column;
     position: relative;
-    align-items: center;
     z-index: 200;
+    width: fit-content;
+}
+
+.task-title,
+.task-description {
+    border: none;
+}
+
+.task-title {
+    font-size: 2em;
+}
+
+.task-description {
+    font-size: 1em;
+}
+
+.task-title:focus,
+.task-description:focus {
+    outline: none;
 }
 
 .wrapper {

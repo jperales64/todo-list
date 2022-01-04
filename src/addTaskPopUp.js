@@ -21,7 +21,7 @@ const createTaskPopUp = () => {
     popUpForm.appendChild(taskTitile);
 
     //task description
-    const taskDescription = document.createElement("input");
+    const taskDescription = document.createElement("textarea");
     taskDescription.setAttribute("type", "text");
     taskDescription.classList.add("task-description");
     taskDescription.placeholder = "Task Description";
