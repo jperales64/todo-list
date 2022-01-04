@@ -1,7 +1,7 @@
 const displayWebPage = () => {
 
     const content = document.querySelector('.content');
-    content.append(createHeader());
+    //content.append(createHeader());
 
     const mainDiv = document.createElement('div');
     mainDiv.classList.add('main-div');
@@ -9,22 +9,36 @@ const displayWebPage = () => {
     const toolbar = document.createElement('div');
     toolbar.classList.add('toolbar');
 
-    const addButton = document.createElement('button');
-    addButton.textContent = "Add Task";
-    addButton.classList.add('add-button');
+    const addTaskButton = document.createElement('button');
+    addTaskButton.textContent = "Create a new task";
+    addTaskButton.classList.add('add-button');
+    addTaskButton.classList.add('fas');
+    addTaskButton.classList.add('fa-plus');
+
+    const addListButton = document.createElement('button');
+    addListButton.textContent = "Create a new list";
+    addListButton.classList.add('add-list-button');
+    addListButton.classList.add('fas');
+    addListButton.classList.add('fa-plus');
 
     const listArrayDivContainer = document.createElement('div');
     listArrayDivContainer.classList.add('list-array-div-container');
 
     const listLabel = document.createElement('div');
+    const listLabelIcon = document.createElement('div');
     listLabel.textContent = 'Lists';
     listLabel.classList.add('list-label');
+    listLabelIcon.classList.add('fas');
+    listLabelIcon.classList.add('fa-chevron-down');
+    listLabelIcon.classList.add('list-label-icon');
+    listLabel.appendChild(listLabelIcon);
 
+    const listArrayDiv = document.createElement('div');
+    listArrayDiv.classList.add('list-array-div');
 
-
-    listLabel.addEventListener("click", function() {
-        this.classList.toggle("active");
-        var content = this.nextElementSibling;
+    listLabelIcon.addEventListener("click", function() {
+        listLabelIcon.classList.toggle("list-label-icon-rotate");
+        const content = document.querySelector('.list-array-div');
         if (content.style.maxHeight) {
             content.style.maxHeight = null;
         } else {
@@ -32,15 +46,11 @@ const displayWebPage = () => {
         }
     });
 
-
-
-    const listArrayDiv = document.createElement('div');
-    listArrayDiv.classList.add('list-array-div');
-
     listArrayDivContainer.appendChild(listLabel);
     listArrayDivContainer.appendChild(listArrayDiv);
 
-    toolbar.appendChild(addButton);
+    toolbar.appendChild(addTaskButton);
+    toolbar.appendChild(addListButton);
     toolbar.appendChild(listArrayDivContainer);
 
     const listViewDiv = document.createElement('div');

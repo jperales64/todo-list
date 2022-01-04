@@ -7,7 +7,7 @@ const createTaskPopUp = () => {
     const popUpWrapper = document.createElement('div');
     popUpWrapper.classList.add('wrapper', "disabled");
     const popUpForm = document.createElement("div");
-    popUpForm.classList.add("pop-up-form");
+    popUpForm.classList.add("pop-up-form", "disabled");
 
 
     //task title
@@ -51,6 +51,22 @@ const createTaskPopUp = () => {
 
     popUpWrapper.appendChild(popUpForm);
     container.appendChild(popUpWrapper);
+
+    popUpWrapper.addEventListener('click', (e) => {
+        if (e.target !== popUpWrapper) {
+            return;
+        }
+        popUpWrapper.classList.add('disabled');
+        popUpForm.classList.add('disabled');
+        document.querySelector(".task-title").value =
+            document.querySelector(".task-title").defaultValue;
+        document.querySelector(".task-description").value =
+            document.querySelector(".task-description").defaultValue;
+        document.querySelector(".task-date").value =
+            document.querySelector(".task-date").defaultValue;
+        document.querySelector(".task-priority").value =
+            document.querySelector(".task-priority").defaultValue;
+    })
 
 }
 

@@ -13,7 +13,7 @@ const displayList = (list) => {
         count++;
     }
 
-    content.appendChild(listDiv);
+    content.insertBefore(listDiv, content.firstChild);
 };
 
 //creats div that holds all list items
@@ -93,7 +93,11 @@ const createItemDescription = (listItem) => {
 const createDeleteButton = () => {
     const deleteButton = document.createElement("button");
     deleteButton.classList.add("delete-button");
-    deleteButton.textContent = "Delete";
+    // deleteButton.textContent = "Delete";
+    deleteButton.classList.add('fas');
+    deleteButton.classList.add('fa-trash-alt');
+    deleteButton.classList.add('fa-lg');
+
 
     return deleteButton;
 };

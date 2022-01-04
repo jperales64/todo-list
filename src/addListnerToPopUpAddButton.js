@@ -2,6 +2,7 @@ import todoItemFactory from "./todoItem";
 import displayList from "./listDisplayer";
 import clearListDiv from "./clearListDiv";
 import addListenerToDeleteButtons from "./deleteListItem";
+import displayListItemInfo from "./displayListItemInfo";
 import { format } from "date-fns";
 
 const addListnerToPopUpAddButton = (currentList) => {
@@ -10,7 +11,8 @@ const addListnerToPopUpAddButton = (currentList) => {
         ".add-task-to-list-button"
     );
 
-    const popUpForm = document.querySelector(".wrapper");
+    const popUpForm = document.querySelector(".pop-up-form");
+    const wrapper = document.querySelector(".wrapper");
     let taskTitle,
         taskDescription,
         taskPriority = "";
@@ -49,8 +51,9 @@ const addListnerToPopUpAddButton = (currentList) => {
             clearListDiv();
             displayList(currentList);
             addListenerToDeleteButtons(currentList);
-            popUpForm.classList.toggle("disabled");
-            popUpForm.classList.toggle("dimmer");
+            popUpForm.classList.add("disabled");
+            wrapper.classList.add("disabled")
+            displayListItemInfo(currentList);
         }
     };
 };
