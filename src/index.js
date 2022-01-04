@@ -46,7 +46,7 @@ currentList.push(testItem2);
 currentList.push(testItem3);
 currentList.push(testItem4);
 
-const hebListIndex = createNewTodoList("Shit to get at HEB");
+
 
 displayList(currentList);
 addListnerToPopUpAddButton(currentList)
