@@ -13,7 +13,7 @@ const displayList = (list) => {
         count++;
     }
 
-    content.appendChild(listDiv);
+    content.insertBefore(listDiv, content.firstChild);
 };
 
 //creats div that holds all list items

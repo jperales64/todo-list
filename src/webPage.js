@@ -9,11 +9,17 @@ const displayWebPage = () => {
     const toolbar = document.createElement('div');
     toolbar.classList.add('toolbar');
 
-    const addButton = document.createElement('button');
-    addButton.textContent = "Create a new task";
-    addButton.classList.add('add-button');
-    addButton.classList.add('fas');
-    addButton.classList.add('fa-plus');
+    const addTaskButton = document.createElement('button');
+    addTaskButton.textContent = "Create a new task";
+    addTaskButton.classList.add('add-button');
+    addTaskButton.classList.add('fas');
+    addTaskButton.classList.add('fa-plus');
+
+    const addListButton = document.createElement('button');
+    addListButton.textContent = "Create a new list";
+    addListButton.classList.add('add-list-button');
+    addListButton.classList.add('fas');
+    addListButton.classList.add('fa-plus');
 
     const listArrayDivContainer = document.createElement('div');
     listArrayDivContainer.classList.add('list-array-div-container');
@@ -43,7 +49,8 @@ const displayWebPage = () => {
     listArrayDivContainer.appendChild(listLabel);
     listArrayDivContainer.appendChild(listArrayDiv);
 
-    toolbar.appendChild(addButton);
+    toolbar.appendChild(addTaskButton);
+    toolbar.appendChild(addListButton);
     toolbar.appendChild(listArrayDivContainer);
 
     const listViewDiv = document.createElement('div');

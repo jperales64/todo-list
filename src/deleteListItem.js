@@ -1,5 +1,6 @@
 import displayList from "./listDisplayer";
 import clearListDiv from "./clearListDiv";
+import displayListItemInfo from "./displayListItemInfo";
 
 const addListenerToDeleteButtons = (currentList) => {
     const deleteButtons = document.querySelectorAll('.delete-button');
@@ -17,6 +18,7 @@ const deleteItem = (currentList, deleteButton) => {
     clearListDiv();
     displayList(currentList);
     addListenerToDeleteButtons(currentList);
+    displayListItemInfo(currentList);
 }
 
 export default addListenerToDeleteButtons

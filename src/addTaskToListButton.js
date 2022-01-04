@@ -1,14 +1,16 @@
-const addListnerToAddButton = () => {
-    const addButton = document.querySelector('.add-button');
-    const popUpForm = document.querySelector('.wrapper');
+const addListnerToAddTaskButton = () => {
+    const addTaskButton = document.querySelector('.add-button');
+    const wrapper = document.querySelector('.wrapper');
+    const popUpForm = document.querySelector('.pop-up-form');
 
-    addButton.addEventListener('click', () => {
 
-        popUpForm.classList.toggle('disabled');
-        popUpForm.classList.toggle('dimmer');
+    addTaskButton.addEventListener('click', () => {
+
+        popUpForm.classList.remove('disabled');
+        wrapper.classList.add('dimmer');
+        wrapper.classList.remove('disabled');
 
     })
 };
 
-
-export default addListnerToAddButton;
+export default addListnerToAddTaskButton;

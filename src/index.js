@@ -8,10 +8,16 @@ import addListnerToPopUpAddButton from "./addListnerToPopUpAddButton";
 import { format } from "date-fns";
 import displayListArray from "./displayListArray";
 import clearListDiv from "./clearListDiv";
+import displayListItemInfo from "./displayListItemInfo";
+import addListnerToAddListButton from "./addNewListButton";
+import createListPopUp from "./addListPopUp";
+import addListnerToPopUpAddListButton from "./addListnerToPopUpAddListButton";
 import './style.css';
 
 
+
 createTaskPopUp();
+createListPopUp();
 displayWebPage();
 
 let taskDate = format(new Date(), "yyyy-MM-dd");
@@ -33,18 +39,20 @@ const createNewTodoList = (name) => {
 
 
 const mainListIndex = createNewTodoList("Main List");
-listArray[mainListIndex].push(testItem);
-listArray[mainListIndex].push(testItem1);
-listArray[mainListIndex].push(testItem2);
-listArray[mainListIndex].push(testItem3);
-listArray[mainListIndex].push(testItem4);
+let currentList = listArray[mainListIndex];
+currentList.push(testItem);
+currentList.push(testItem1);
+currentList.push(testItem2);
+currentList.push(testItem3);
+currentList.push(testItem4);
 
 const hebListIndex = createNewTodoList("Shit to get at HEB");
 
-displayList(listArray[mainListIndex]);
-addListnerToPopUpAddButton(listArray[mainListIndex])
+displayList(currentList);
+addListnerToPopUpAddButton(currentList)
+addListnerToPopUpAddListButton(listArray);
 
-addListenerToDeleteButtons(listArray[mainListIndex]);
+addListenerToDeleteButtons(currentList);
 
 addListnerToAddButton();
 
@@ -56,9 +64,15 @@ for (let listItem of listArrayDivs) {
 
     listItem.addEventListener('click', () => {
         clearListDiv();
-        displayList(listArray[listItem.getAttribute('index')]);
-        addListnerToPopUpAddButton(listArray[listItem.getAttribute('index')])
-        addListenerToDeleteButtons(listArray[listItem.getAttribute('index')]);
+        currentList = listArray[listItem.getAttribute('index')];
+        displayList(currentList);
+        addListnerToPopUpAddButton(currentList);
+        addListenerToDeleteButtons(currentList);
+        displayListItemInfo(currentList);
 
     })
 }
+addListnerToAddListButton();
+displayListItemInfo(currentList);
+
+export default createNewTodoList;
