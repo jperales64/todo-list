@@ -186,7 +186,9 @@ body {
 }
 
 .task-title,
-.task-description {
+.task-description,
+.task-date,
+.task-priority {
     border: none;
 }
 
@@ -199,8 +201,14 @@ body {
 }
 
 .task-title:focus,
-.task-description:focus {
+.task-description:focus,
+.task-date:focus,
+.task-priority:focus {
     outline: none;
+}
+
+.task-date {
+    width: fit-content;
 }
 
 .wrapper {
